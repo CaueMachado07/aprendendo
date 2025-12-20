@@ -35,15 +35,7 @@ function potencia(base, expoente = 2) { // expoente padrão é 2 caso não seja 
 printText(`2 elevado ao quadrado é: ${potencia(2)}`);
 printText(`3 elevado ao cubo é: ${potencia(3, 3)}`);
 
-// Função callback - uma função passada como argumento para outra função
-function executarOperacao(a, b, operacao) { // operacao é uma função callback chamada dentro de executarOperacao exemplo: soma, multiplicacao.
-    return operacao(a, b);
-}
-const resultadoSoma = executarOperacao(7, 3, soma);
-printText(`Resultado da operação de soma: ${resultadoSoma}`);
 
-const resultadoMultiplicacao = executarOperacao(7, 3, multiplicacao);
-printText(`Resultado da operação de multiplicação: ${resultadoMultiplicacao}`);
 
 // ------------------------------------------------------------------------------------------
 
