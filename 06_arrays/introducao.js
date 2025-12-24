@@ -150,3 +150,7 @@ for(const i of frutas){
 // iterar sobre arrays é uma habilidade fundamental em programação, permitindo processar e manipular coleções de dados de forma eficiente.
 // ------------------------------------------------------------------------------------------
 
+// vale ressaltar que o array é uma estrutura de dados muito poderosa e versátil em JavaScript, oferecendo diversos métodos e funcionalidades para facilitar o trabalho com coleções de dados.
+// podendo armazenar diferentes tipos de dados, incluindo números, strings, objetos e até outros arrays simultaneamente.
+// mas deve-se ter cuidado ao manipular arrays com multiplos tipos de dados, pois isso pode levar a comportamentos inesperados ao iterar ou processar os elementos.
+// É importante entender bem os métodos disponíveis para arrays, como push(), pop(), splice(), slice(), forEach(), map(), filter(), reduce(), entre outros, para aproveitar ao máximo essa estrutura de dados em seus programas.
