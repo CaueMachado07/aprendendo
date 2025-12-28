@@ -2,6 +2,14 @@
 // Ao acessar arquivos em pastas diferentes, usamos ../ para subir um nível na hierarquia de pastas.
 const { print } = require('../05_funcoes/01_fucoes');
 
+// objetivo deste arquivo é demonstrar alguns dos principais métodos disponíveis para arrays em JavaScript.
+// o que são arrays e como utilizá-los com métodos embutidos.
+// o quem são arrays?
+// Arrays são estruturas de dados que armazenam uma coleção de elementos em uma única variável.
+// Eles permitem armazenar múltiplos valores, que podem ser de diferentes tipos de dados, como números, strings, objetos, etc.
+// Cada elemento em um array é acessível através de um índice numérico, começando do zero.
+// Arrays são amplamente utilizados em programação para organizar e manipular conjuntos de dados de forma eficiente.
+
 // Metodos de arrays
 // Arrays em JavaScript possuem diversos métodos embutidos que facilitam a manipulação e o gerenciamento dos dados armazenados neles.
 // Aqui estão alguns dos métodos mais comuns:
