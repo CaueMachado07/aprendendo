@@ -3,8 +3,8 @@
 
 // Declaração de função
 // Função para imprimir texto no console
-function print(text) {
-    console.log(text);
+function print(...args) { // usando rest parameter para aceitar múltiplos argumentos
+    console.log(...args);
 };
 
 function saudacao(nome) {
