@@ -1,7 +1,7 @@
 // importando a função print
 const { print } = require('../05_funcoes/01_fucoes');
 
-// vamos explorar o operador spread e rest em JavaScript
+// vamos explorar o operador spread e rest em objetos JavaScript
 
 // O operador spread (...) permite expandir elementos iteráveis (como arrays ou strings) em locais onde zero ou mais argumentos (para chamadas de função) ou elementos (para arrays literais) são esperados. Já o operador rest (...) permite agrupar um número indefinido de argumentos em um array.
 
@@ -54,25 +54,6 @@ const endereco = {
 const pessoaComEndereco = { ...pessoa, ...endereco }; // a ordem importa, as propriedades do segundo objeto sobrescrevem as do primeiro em caso de conflito
 print('Objeto pessoaComEndereco:', pessoaComEndereco);
 // aqui, criamos um novo objeto pessoaComEndereco que combina as propriedades de pessoa e endereco usando o operador spread.
-
-
-
-// como mencionado anteriormente, o operador spread também pode ser usado em chamadas de função para expandir elementos de um array em argumentos individuais:
-function somar(a, b, c) {
-    return a + b + c;
-}
-const numerosParaSomar = [1, 2, 3];
-const resultado = somar(...numerosParaSomar);
-print('Resultado da soma:', resultado);
-// aqui, usamos o operador spread para passar os elementos do array numerosParaSomar como argumentos individuais para a função somar.
-
-
-
-// podemos usar o spread em arrays também:
-const numeros = [1, 2, 3];
-const novosNumeros = [...numeros, 4, 5, 6];
-print('Array novosNumeros:', novosNumeros);
-// aqui, criamos um novo array novosNumeros que contém todos os elementos do array numeros, seguidos pelos números 4, 5 e 6.
 
 
 
