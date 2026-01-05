@@ -2,11 +2,11 @@
 idade = 30;
 var nome = 'Ana';
 
-// Variavel local - recomendado
-let idadeLocal = 31;
+// Variavel local - recomendado para escopo de função ou bloco que pode mudar de valor
+let idadeLocal = 31; //use let para variaveis que podem mudar de valor
 
-// Variavel constante - valor fixo
-const ano = 2025;
+// Variavel constante - valor fixo - recomendado para valores que não mudam de valor 
+const ano = 2025; // use const para valores que não mudam de valor
 
 // Variavel com escopo de bloco
 {
