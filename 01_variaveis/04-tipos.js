@@ -1,6 +1,7 @@
 let nome = 'Carlos';
 let idade = 28;
 let altura = 1.75;
+let numero = NaN;
 let isEstudante = true;
 let nota = null;
 let endereco;
@@ -9,9 +10,10 @@ let simbolo = Symbol();
 console.log(typeof nome);        // string
 console.log(typeof idade);       // number
 console.log(typeof altura);      // number
+console.log(typeof numero);      // number (NaN é um valor numérico especial) Not a Number, geralmente resultado de operações inválidas com números
 console.log(typeof isEstudante); // boolean
 console.log(typeof nota);        // object (null é um tipo especial)
-console.log(typeof endereco);    // undefined
+console.log(typeof endereco);    // undefined - variável declarada mas não inicializada
 console.log(typeof simbolo);     // symbol
 
 // boa prática: usar nomes descritivos para variáveis
