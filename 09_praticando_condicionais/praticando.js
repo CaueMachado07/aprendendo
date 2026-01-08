@@ -90,7 +90,7 @@
 // //     pessoa usuária super premium tem acesso total e bônus especiais
 
 // function identificarTipoPessoa(tipo){
-//     switch (tipoPessoa){
+//     switch (tipo){
 //     case 'free':
 //         console.log(`acesso limitado ao app`);
 //         break;
@@ -340,26 +340,69 @@
 
 // // --------------------------------------------------------------------------------------------
 
-// 19 - Verificando o status de pagamento
-// Você está criando um sistema de verificação de status de pagamento de clientes. Dependendo do status, o sistema deve exibir uma mensagem apropriada:
+// // 19 - Verificando o status de pagamento
+// // Você está criando um sistema de verificação de status de pagamento de clientes. Dependendo do status, o sistema deve exibir uma mensagem apropriada:
 
-// Se o status for "pendente", exibe: "Pagamento pendente".
-// Se o status for "aprovado", exibe: "Pagamento aprovado".
-// Se o status for "recusado", exibe: "Pagamento recusado".
-// Use o switch/case para criar um programa que faça essa verificação e mostre a mensagem correspondente ao status do pagamento.
+// // Se o status for "pendente", exibe: "Pagamento pendente".
+// // Se o status for "aprovado", exibe: "Pagamento aprovado".
+// // Se o status for "recusado", exibe: "Pagamento recusado".
+// // Use o switch/case para criar um programa que faça essa verificação e mostre a mensagem correspondente ao status do pagamento.
 
+// function verificarStatusPagamento(status){
+//     switch (status){
+//     case 'pendente':
+//         return `Pagamento pendente`;
+//         break;
+//     case 'aprovado':
+//         return `Pagamento aprovado`;
+//         break;
+//     case 'recusado':
+//         return `Pagamento recusado`;
+//         break;
+//     case '':
+//         return `Status de pagamento não informado`;
+//         break;
+//     default:
+//         return `Tipo de pagamento inválido`;
+//     };
+// };
+
+// const pagamento = '';
+// const statusPagamento = verificarStatusPagamento(pagamento.toLocaleLowerCase());
+// console.log(statusPagamento);
 
 
 // // --------------------------------------------------------------------------------------------
 
 
-// 20 - Verificar acesso a nível do jogo
-// Você está criando um sistema para um jogo, onde o personagem tem que passar por duas condições para conseguir avançar para o próximo nível:
+// // 20 - Verificar acesso a nível do jogo
+// // Você está criando um sistema para um jogo, onde o personagem tem que passar por duas condições para conseguir avançar para o próximo nível:
 
-// O personagem precisa ter mais de 50 pontos.
-// O personagem deve ter pelo menos uma vida restante.
-// Crie um programa que, dado os pontos e as vidas restantes, verifique se o personagem pode ou não avançar para o próximo nível.
+// // O personagem precisa ter mais de 50 pontos.
+// // O personagem deve ter pelo menos uma vida restante.
+// // Crie um programa que, dado os pontos e as vidas restantes, verifique se o personagem pode ou não avançar para o próximo nível.
+// const readline = require ('readline');
 
+// const leitor = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
+
+// function verificarAcesso(pontos, vidas){
+//     return (pontos > 50 && vidas >= 1)? `Próximo nível liberado!` : `Não pode avançar para o próximo nível.`
+// }
+
+// function inputUsuario(){
+//     leitor.question('Informe os Pontos: ', (pontos) =>{
+//         leitor.question('Informe a quantidade de vidas restantes: ', (vidas) => {
+//             const mesagemAcesso = verificarAcesso(pontos, vidas);
+//             console.log(mesagemAcesso);
+//             leitor.close();
+//         })
+//     })
+// }
+
+// inputUsuario();
 
 // // --------------------------------------------------------------------------------------------
 
@@ -371,3 +414,13 @@
 // "Moderada": se estiver entre 20% e 80%
 // "Cheia": se estiver acima de 80%
 // Utilize o operador ternário para definir e exibir a categoria da bateria com base no valor da variável bateria.
+
+function verificarNivelBateria(bateria){
+    return (bateria < 20) ? 'Crítica' 
+        : (bateria <= 80) ? 'Moderada' 
+            : 'Cheia';
+}
+const nivelBateria = 85;
+console.log(verificarNivelBateria(nivelBateria));   
+
+
