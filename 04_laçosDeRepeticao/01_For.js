@@ -91,6 +91,70 @@
 //     console.log(i);
 //     i++; // Atualize a variável de controle dentro do laço
 // }
+
+
+// também é possível usar a condição de forma diferente
+// por exemplo, usando uma variável booleana para controlar o laço
+// let continuar = true;
+// for (let i = 0; continuar; i++) {
+//     console.log(i);
+//     if (i >= 4) {
+//         continuar = false; // Atualize a variável para sair do laço
+//     }
+// }
+
+// outra forma é usar break dentro do laço para sair quando uma condição for atendida
+// for (let i = 0; ; i++) {
+//     if (i >= 5) {
+//         break; // Sai do laço quando i for maior ou igual a 5
+//     }
+//     console.log(i);
+// }
+
+
+// // também podemos usar um elemento do array como condição
+// const numeros = [100, 200, 300, 400, 500, 600];
+ 
+// for (let i = numeros.length - 1; numeros[i] >= 300; i -= 2) {
+//   console.log(numeros[i]);
+// }
+// // Output:
+// // 600
+// // 400
+
+// // veja que o laço começa do final do array e decrementa de 2 em 2, imprimindo os números enquanto forem maiores ou iguais a 300.
+// // Isso demonstra a flexibilidade do laço for em JavaScript, permitindo que você controle a iteração de várias maneiras diferentes.
+// // 
+
+
+// //-------------------------------------------------------------------------------------
+// // laço forEach
+// //-------------------------------------------------------------------------------------
+// // sintaxe básica
+// // array.forEach(function(elemento, índice, array) {
+// //     // código a ser executado para cada elemento
+// // });
+// // O método forEach() executa uma função fornecida uma vez para cada elemento do array.
+// // Exemplo: somar todos os números em um array
+// const numeros = [1, 2, 3, 4, 5];
+// let soma = 0;
+
+// numeros.forEach(function(numero) {
+//   soma += numero;
+// });
+
+// console.log(`A soma dos números é: ${soma}`);
+
+// // IMPORTANTE: O forEach não retorna um novo array, ele apenas executa a função para cada elemento do array original.
+// // tambem não é possível usar break ou continue dentro de um forEach, pois ele não suporta controle de fluxo dessa forma.
+// // não pode ser utilizado com qualquer iteravel, apenas arrays.
+// // e também não pode ser usado de forma assíncrona, ou seja, não funciona bem com funções que retornam promessas (Promises).
+
+
+
+
+
+
 //-------------------------------------------------------------------------------------
 // Laço for...of
 // Sintaxe básica

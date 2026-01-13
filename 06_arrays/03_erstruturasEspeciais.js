@@ -32,7 +32,16 @@ print(`Array sem duplicatas: ${arraySemDuplicatas}`); // [1, 2, 3, 4, 5]
 
 // set permite apenas valores únicos, então é ideal para armazenar coleções onde duplicatas não são permitidas.
 
+// embora pareça com arrays, sets não possuem índices e não mantêm a ordem de inserção dos elementos da mesma forma que arrays fazem.
+// tambem não suportam métodos de array como map, filter, reduce, etc., mas podemos converter um set em um array para usar esses métodos quando necessário.
 
+// exemplo de array com duplicatas
+const nomes = ['Ana', 'Bruno', 'Ana', 'Carlos', 'Bruno'];
+print(`Array original de nomes: ${nomes}`);
+
+// usando o set para remover duplicatas e transformando de volta em array
+const nomesUnicos = [...new Set(nomes)]; // espalhando os valores do set em um novo array
+print(`Array de nomes únicos: ${nomesUnicos}`);
 
 
 // ------------------------------------------------------------------------------------------

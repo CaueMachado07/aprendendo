@@ -86,10 +86,54 @@ frutas.forEach((fruta, indice) => {
 const numerosDobrados = numeros.map(num => num * 2);
 print(`Números dobrados (map): ${numerosDobrados}`); // [2,4,6,8,10,12,14,16,18,20,22,24]
 
+// usando map para transformar um array de strings em um array de seus comprimentos
+const comprimentosFrutas = frutas.map(fruta => fruta.length);
+print(`Comprimentos das frutas (map): ${comprimentosFrutas}`); // [8,4,6,9,7,3]
+
+// usando map para atualizar notas de alunos adicionando 1 ponto extra a cada nota
+const notas = [7, 8.5, 6, 9, 5.5];
+const notasAtualizadas = notas.map(nota => Math.min(nota + 1, 10)); // garantindo que a nota máxima seja 10
+print(`Notas atualizadas (map): ${notasAtualizadas}`); // [8,9.5,7,10,6.5]
+
+// o mesmo exemplo usando operador ternário
+const notasAtualizadasTernario = notas.map(nota => (nota + 1 > 10 ? 10 : nota + 1));
+print(`Notas atualizadas com ternário (map): ${notasAtualizadasTernario}`); // [8,9.5,7,10,6.5]
+
+
 
 // filter(): Cria um novo array com todos os elementos que passam em um teste especificado por uma função.
 const numerosPares = numeros.filter(num => num % 2 === 0);
 print(`Números pares (filter): ${numerosPares}`); // [2,4,6,8,10,12]
+
+// sintaxe: array.filter((elemento, indice, array) => { ... });
+// os parametros são opcionais:
+// elemento: o elemento atual sendo processado no array.
+// indice: o índice do elemento atual sendo processado no array.
+// array: o array original que está sendo percorrido.
+
+const alunos = ['Ana', 'Marcos', 'Maria', 'Mauro'];
+const medias = [7, 4.5, 8, 7.5];
+
+const alunosAprovados = alunos.filter(( _, indice) => medias[indice] >= 7); // usando _ para indicar que o primeiro parâmetro não será usado
+print(`Alunos aprovados (filter): ${alunosAprovados}`); // ['Ana', 'Maria', 'Mauro']
+
+
+// usando o finder() para encontrar o primeiro número maior que 5
+const primeiroMaiorQueCinco = numeros.find(num => num > 5);
+print(`Primeiro número maior que 5 (find): ${primeiroMaiorQueCinco}`); // 6
+
+// usando find() para encontrar um nome específico em um array de nomes
+const nomes = ['João Silva', 'Maria Souza', 'Pedro Santos', 'Ana Oliveira'];
+const nomeProcurado = 'Pedro Santos';
+const encontrado = nomes.find(nome => nome === nomeProcurado);
+print(`Nome encontrado (find): ${encontrado}`); // 'Pedro Santos'
+
+// exemplo acima exibindo o nome no console, caso não encontrado exibe mensagem de aviso
+if (encontrado) {
+    print(`Nome encontrado: ${encontrado}`);
+} else {
+    print('Nome não encontrado.');
+}
 
 
 // reduce(): Aplica uma função a um acumulador e a cada elemento do array (da esquerda para a direita) para reduzi-lo a um único valor.
