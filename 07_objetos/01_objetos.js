@@ -188,3 +188,28 @@ const { print } = require('../05_funcoes/01_fucoes');
 
 // -------------------------------------------------------------------------------------
 
+// // não podemos esquecert que devemos ter cuidado ao copiar objetos
+// // pois se fizermos uma cópia direta, estaremos apenas copiando a referência do objeto original
+// isso significa que alterações feitas na cópia também afetarão o objeto original.
+// // para evitar isso, podemos usar o método Object.assign() ou o operador spread (...) para criar uma cópia superficial do objeto ou uma cópia profunda usando parse e stringify do JSON.
+// vejamos um exemplo:
+const objetoOriginal = { a: 1, b: 2 };
+const objetoCopia = objetoOriginal; // cópia por referência (não recomendado)
+const objetoCopia2 = Object.assign({}, objetoOriginal); // cópia superficial usando Object.assign()
+const objetoCopia3 = { ...objetoOriginal }; // cópia superficial usando spread operator
+
+objetoCopia.b = 3; // alterando a cópia
+
+console.log('Objeto Original:', objetoOriginal); // { a: 1, b: 2 }
+console.log('Objeto Cópia:', objetoCopia); // { a: 1, b: 3 }
+console.log('Objeto Cópia2:', objetoCopia2); // { a: 1, b: 2 }
+console.log('Objeto Cópia3:', objetoCopia3); // { a: 1, b: 2 }
+// para cópia profunda
+
+const objetoParaCopiaProfunda = { a: 1, b: { c: 2 } };
+const objetoCopiaProfunda = JSON.parse(JSON.stringify(objetoParaCopiaProfunda));
+
+objetoCopiaProfunda.b.c = 3; // alterando a cópia profunda
+
+console.log('Objeto Original (Profundo):', objetoParaCopiaProfunda); // { a: 1, b: { c: 2 } }
+console.log('Objeto Cópia Profunda:', objetoCopiaProfunda); // { a: 1, b: { c: 3 } }
