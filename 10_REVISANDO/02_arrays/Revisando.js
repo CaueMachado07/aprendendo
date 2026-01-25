@@ -49,3 +49,63 @@ function criaArrNum(inicio, fim) {
 // reverse: método que inverte a ordem dos elementos na array
 // sort: método que ordena os elementos da array in loco e retorna a array ordenada
 // concat: método que é usado para mesclar duas ou mais arrays, retornando uma nova array sem modificar as arrays originais
+
+
+// outra caracteristica dos arrays é que ao tentarmos atribui-los a uma variável, na verdade estamos atribuindo uma referência ao local na memória onde o array está armazenado, e não uma cópia do array em si. Isso significa que se modificarmos o array através de uma dessas variáveis, a outra variável também refletirá essas mudanças, pois ambas apontam para o mesmo array na memória.
+
+// para criar uma cópia de um array e evitar esse comportamento de referência, podemos usar métodos como slice(), concat(), ou o operador spread (...). Esses métodos criam uma nova array com os mesmos elementos, permitindo que as modificações em uma não afetem a outra.
+
+// para uma cópia rasa (shallow copy) de um array, onde apenas o primeiro nível de elementos é copiado, podemos usar os seguintes métodos:
+// 1. slice(): const novaArray = arrayOriginal.slice();
+// 2. concat(): const novaArray = [].concat(arrayOriginal);
+// 3. operador spread: const novaArray = [...arrayOriginal];
+
+// para uma cópia profunda (deep copy) de um array, onde todos os níveis de elementos são copiados, incluindo objetos aninhados, podemos usar JSON.parse() e JSON.stringify():
+// const novaArrayProfunda = JSON.parse(JSON.stringify(arrayOriginal));
+
+// também podemos fazer usando recursão para copiar arrays aninhadas, garantindo que todos os níveis sejam duplicados corretamente.
+// veja um exemplo de função para cópia profunda usando recursão:
+// usando forEach
+const copiaArray = (arr) => {
+  const copia = []; // array vazio para armazenar a cópia
+  arr.forEach((elem) => {
+    if (Array.isArray(elem)) { // verifica se o elemento é uma array
+      copia.push(copiaArray(elem)); // chama recursivamente para arrays aninhadas
+    } else {
+      copia.push(elem); // adiciona valores primitivos diretamente
+    }
+  })
+  return copia;
+};
+
+// usando map
+function deepCopyArray(arr) {
+  return arr.map(item => {
+    if (Array.isArray(item)) {
+      return deepCopyArray(item); // chama recursivamente para arrays aninhadas
+    } else if (item !== null && typeof item === 'object') { // verifica se o item é um objeto
+      return { ...item }; // cria uma cópia rasa de objetos
+    }
+    return item; // retorna valores primitivos diretamente
+  });
+}
+
+
+// Praticando usnado condicionais e map()
+// verificar se na lista de cpf tem algum diferente de string, se tiver, retornar uma lista com os cpfs válidos convertidos para string
+
+
+const cpfs = ['12323434545', '34658756786', 43254365434, '76547865345', 56768767564];
+
+const result = cpfs.map((cpf) => {
+  if (typeof cpf === 'string') { // verifica se o cpf já é uma string
+    return cpf;
+  } else {
+    return cpf.toString(); // converte para string se não for
+  }
+})
+
+// otimizando com operador ternário
+const resultOptimized = cpfs.map((cpf) => 
+  typeof cpf === 'string' ? cpf : cpf.toString()
+);
