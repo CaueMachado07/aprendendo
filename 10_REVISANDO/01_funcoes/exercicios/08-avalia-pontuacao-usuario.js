@@ -53,3 +53,27 @@ function avaliarDesempenho(pontos, fnCallback ){
 }
 
 console.log(avaliarDesempenho(30, gerarMensagem))
+
+
+
+// outra forma de fazer
+
+function avaliarDesempenhoAtt(pontos, fnCallback ){
+    if ( typeof pontos !== 'number' || pontos < 0 ) return 'Pontuação inválida.' // validação simplificada
+
+    console.log(`Pontuação: ${pontos}`);
+
+    let desempenho = pontos >= 70 ? 'aprovado' : pontos >= 50 ? 'reforço' : 'reprovado'; // uso de operador ternário para determinar desempenho
+    return fnCallback(desempenho)
+}
+
+function gerarMensagemAtt(desempenho) {
+    const mensagens = { // uso de objeto para mapear mensagens
+        aprovado: 'Parabéns! Você foi aprovado.',
+        reforço: 'Atenção! Você precisa de reforço.',
+        reprovado: 'Pontuação insuficiente! Você foi reprovado.'
+    };
+    return mensagens[desempenho] || 'Status inválido.'; // retorna mensagem com base no desempenho
+}
+
+console.log(avaliarDesempenhoAtt(85, gerarMensagemAtt))
